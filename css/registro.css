@@ -1,0 +1,319 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo base */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #0d1b2a;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.buscador {
+    display: none;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.menu a {
+    padding: 10px;
+    border-top: 1px solid #1b263b;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburguesa {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu.activo {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        flex: 1;
+        max-width: 340px;
+        min-width: 180px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto minmax(200px, 340px) 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        background: none;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .buscador {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .buscador {
+        max-width: 260px;
+    }
+}
+/* =========================
+   HERO REGISTRO
+========================= */
+.hero-registro {
+    background:
+        linear-gradient(rgba(13, 27, 42, 0.68), rgba(13, 27, 42, 0.68)),
+        url("../img/banner.png") no-repeat center center;
+    background-size: cover;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-registro-texto {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.hero-registro-texto h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero-registro-texto p {
+    font-size: 15px;
+}
+
+/* =========================
+   CONTENEDOR REGISTRO
+========================= */
+.contenedor-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+}
+
+/* Caja */
+.registro-box {
+    width: 100%;
+    max-width: 760px;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+    border: 1px solid #eef2f7;
+}
+
+.registro-encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registro-encabezado h2 {
+    font-size: 28px;
+    color: #0d1b2a;
+}
+
+.registro-encabezado p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fila-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.grupo-input input {
+    padding: 13px;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.grupo-input input:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.10);
+}
+
+/* Password */
+.input-password {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-ver {
+    border: none;
+    background: #f1f5f9;
+    width: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Checkbox */
+.check-box {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* Botón */
+.btn-registro {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-registro:hover {
+    transform: translateY(-2px);
+}
+
+/* Mensaje */
+.mensaje-registro {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.registro-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.registro-footer a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .fila-formulario {
+        grid-template-columns: 1fr;
+    }
+}

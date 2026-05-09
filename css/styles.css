@@ -1,0 +1,428 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base general del sitio */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #0d1b2a;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #0d1b2a;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.buscador {
+    display: none;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.menu a {
+    padding: 10px;
+    border-top: 1px solid #1b263b;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburguesa {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu.activo {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        flex: 1;
+        max-width: 340px;
+        min-width: 180px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto minmax(200px, 340px) 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        background: none;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .buscador {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .buscador {
+        max-width: 260px;
+    }
+}
+
+/* =========================
+   HERO
+   Banner principal de inicio
+========================= */
+.hero {
+    width: 100%;
+    min-height: 320px;
+    background:
+        linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)),
+        url("../img/banner.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Caja de texto sobre el banner */
+.hero-texto {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 20px 25px;
+    border-radius: 12px;
+    max-width: 700px;
+}
+
+.hero-texto h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-texto p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Botón del hero */
+.btn-hero {
+    margin-top: 15px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-hero:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   CARRUSEL DE CATEGORÍAS
+========================= */
+.categorias {
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.carrusel-categorias {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.track-categorias {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+}
+
+.categoria {
+    min-width: 260px;
+    max-width: 260px;
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.categoria img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+.categoria h3 {
+    margin-bottom: 8px;
+    color: #0d1b2a;
+}
+
+.categoria p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.categoria:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.18);
+    border: 2px solid #00b4d8;
+}
+
+.categoria.activa {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.18);
+    border: 2px solid #0077b6;
+}
+
+/* =========================
+   PRODUCTOS Y ARTÍCULOS
+========================= */
+.grid-productos,
+.grid-articulos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    color: #0d1b2a;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.precio {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        width: 40%;
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero-texto h1 {
+        font-size: 36px;
+    }
+
+    .grid-productos,
+    .grid-articulos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categoria {
+        min-width: 220px;
+        max-width: 220px;
+    }
+
+    .categoria img {
+        height: 140px;
+    }
+}
+
+/* =========================
+   RESPONSIVE PC
+========================= */
+@media (min-width: 1024px) {
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0 10px;
+    }
+
+    .buscador {
+        width: 30%;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-texto h1 {
+        font-size: 42px;
+    }
+
+    .grid-productos,
+    .grid-articulos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 240px;
+    }
+
+    .hero-texto {
+        padding: 16px;
+    }
+
+    .hero-texto h1 {
+        font-size: 22px;
+    }
+
+    .hero-texto p {
+        font-size: 14px;
+    }
+
+    .categoria {
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .categoria img {
+        height: 130px;
+    }
+}

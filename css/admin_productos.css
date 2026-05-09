@@ -1,0 +1,407 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* =========================
+   LAYOUT GENERAL
+========================= */
+.sidebar-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(180deg, #0f172a, #111827);
+    color: white;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-brand h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.sidebar-brand span {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #e5e7eb;
+    padding: 12px 14px;
+    border-radius: 12px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.activo {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(4px);
+}
+
+.admin-main {
+    margin-left: 260px;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    background: white;
+    border-radius: 18px;
+    padding: 18px 22px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-left h1 {
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.topbar-left p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.btn-menu-admin {
+    display: none;
+    border: none;
+    background: #0f172a;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.admin-user-box {
+    text-align: right;
+}
+
+.admin-user-label {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+/* =========================
+   MÉTRICAS
+========================= */
+.metricas-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.metrica-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e5edf5;
+}
+
+.metrica-card h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.metrica-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+    text-transform: capitalize;
+}
+
+/* =========================
+   GRID ADMIN
+========================= */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.panel-admin {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+    border: 1px solid #e5edf5;
+}
+
+.panel-header {
+    margin-bottom: 18px;
+}
+
+.panel-header h2 {
+    font-size: 22px;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.panel-header p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+.form-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fila-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.grupo-input textarea {
+    resize: vertical;
+}
+
+.btn-principal {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.20);
+}
+
+/* =========================
+   TABLA PRODUCTOS
+========================= */
+.tabla-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 60px 1.6fr 120px 120px 90px 1.4fr 160px;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    font-size: 14px;
+}
+
+.fila.encabezado {
+    background: #e8eefc;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.ruta-img {
+    word-break: break-all;
+    color: #475569;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-editar,
+.btn-eliminar {
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-editar {
+    background: #2563eb;
+}
+
+.btn-eliminar {
+    background: #dc2626;
+}
+
+.sin-registros {
+    text-align: center;
+    color: #6b7280;
+    padding: 28px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar-admin {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-admin.activo {
+        transform: translateX(0);
+    }
+
+    .admin-main {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .btn-menu-admin {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .metricas-admin {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .fila-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .fila {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .topbar-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topbar-right {
+        width: 100%;
+    }
+
+    .admin-user-box {
+        text-align: left;
+    }
+}
+.miniatura-admin img,
+.miniatura-admin {
+    display: inline-block;
+}
+
+.miniatura-admin img,
+.miniatura-admin {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.preview-imagen-admin {
+    margin-top: 10px;
+}
+
+.preview-imagen-admin p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.imagen-editar-admin {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #dbe5ef;
+}

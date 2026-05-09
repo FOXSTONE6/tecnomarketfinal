@@ -1,0 +1,436 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   HEADER
+   Mantiene el estilo del proyecto
+========================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #0d1b2a;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.buscador {
+    display: none;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.menu a {
+    padding: 10px;
+    border-top: 1px solid #1b263b;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburguesa {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu.activo {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        flex: 1;
+        max-width: 340px;
+        min-width: 180px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto minmax(200px, 340px) 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        background: none;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .buscador {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .buscador {
+        max-width: 260px;
+    }
+}
+
+/* =========================
+   HERO LOGIN
+========================= */
+.hero-login {
+    background:
+        linear-gradient(rgba(13, 27, 42, 0.68), rgba(13, 27, 42, 0.68)),
+        url("../img/banner.png") no-repeat center center;
+    background-size: cover;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-login-texto {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.hero-login-texto h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero-login-texto p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* =========================
+   CONTENEDOR LOGIN
+========================= */
+.contenedor-login {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+}
+
+/* Caja principal */
+.login-box {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+    border: 1px solid #eef2f7;
+}
+
+.login-encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-encabezado h2 {
+    font-size: 28px;
+    color: #0d1b2a;
+    margin-bottom: 8px;
+}
+
+.login-encabezado p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.grupo-input input {
+    padding: 13px 14px;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-input input:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.10);
+}
+
+/* Input contraseña */
+.input-password {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-password input {
+    flex: 1;
+}
+
+.btn-ver {
+    border: none;
+    background: #f1f5f9;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Opciones */
+.opciones-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.recordar-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+.link-recuperar {
+    font-size: 14px;
+    text-decoration: none;
+    color: #0077b6;
+}
+
+.link-recuperar:hover {
+    text-decoration: underline;
+}
+
+/* Botón login */
+.btn-login {
+    margin-top: 4px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 119, 182, 0.25);
+}
+
+/* Mensaje */
+.mensaje-login {
+    min-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Footer login */
+.login-footer {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #edf2f7;
+    padding-top: 18px;
+}
+
+.login-footer p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.login-footer a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        width: 40%;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    .hero-login {
+        height: 320px;
+    }
+
+    .hero-login-texto h1 {
+        font-size: 38px;
+    }
+}
+
+/* =========================
+   RESPONSIVE PC
+========================= */
+@media (min-width: 1024px) {
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0 10px;
+    }
+
+    .buscador {
+        width: 30%;
+    }
+
+    .hero-login {
+        height: 380px;
+    }
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+@media (max-width: 480px) {
+    .hero-login {
+        height: 220px;
+    }
+
+    .hero-login-texto h1 {
+        font-size: 24px;
+    }
+
+    .hero-login-texto p {
+        font-size: 14px;
+    }
+
+    .login-box {
+        padding: 22px 18px;
+    }
+
+    .opciones-login {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

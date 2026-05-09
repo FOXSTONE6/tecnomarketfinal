@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+section {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #0d1b2a;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.buscador {
+    display: none;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.menu a {
+    padding: 10px;
+    border-top: 1px solid #1b263b;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburguesa {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu.activo {
+    display: flex;
+}
+
+.hero-articulos {
+    background: linear-gradient(rgba(13,27,42,.68), rgba(13,27,42,.68)), url("../img/banner.png") no-repeat center center;
+    background-size: cover;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-articulos-texto {
+    background: rgba(0,0,0,.35);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.hero-articulos-texto h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.filtros-articulos {
+    display: flex;
+    gap: 20px;
+    background: #f7f9fc;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+}
+
+.filtro-grupo label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.filtro-grupo select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+}
+
+.contenedor-articulos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.barra-articulos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.grid-articulos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.articulo-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    border: 1px solid #eef2f7;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.articulo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+
+.articulo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.articulo-body {
+    padding: 18px;
+}
+
+.articulo-categoria {
+    display: inline-block;
+    background: #e8f4fa;
+    color: #0077b6;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.articulo-body h3 {
+    margin-bottom: 10px;
+    color: #0d1b2a;
+}
+
+.articulo-body p {
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.articulo-link {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+.footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .buscador {
+        display: block;
+        flex: 1;
+        max-width: 340px;
+        min-width: 180px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    .hero-articulos {
+        height: 340px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto minmax(200px, 340px) 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        background: none;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        border: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .grid-articulos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-articulos {
+        grid-template-columns: 1fr;
+    }
+}
